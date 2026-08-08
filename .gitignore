@@ -1,0 +1,21 @@
+# ---- Backend (C++/CMake) ----
+backend/build/
+backend/logs/
+backend/.env
+*.o
+*.obj
+*.exe
+*.dll
+*.pdb
+
+# ---- Blockchain (Node/Hardhat) ----
+blockchain/node_modules/
+blockchain/cache/
+blockchain/artifacts/
+blockchain/typechain-types/
+
+# ---- Misc ----
+.vscode/
+*.log
+.DS_Store
+Thumbs.db

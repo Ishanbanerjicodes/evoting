@@ -1,0 +1,4 @@
+This folder is for optional static assets (custom images, favicons, etc.)
+referenced by the frontend. Currently empty since the UI uses inline SVG
+icons and initials-based avatars instead of image files, keeping the
+project lightweight and avoiding placeholder/stock imagery.

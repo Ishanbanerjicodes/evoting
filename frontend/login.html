@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Log In — CivicChain</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+<div class="auth-shell">
+    <!-- Visual side -->
+    <div class="auth-visual">
+        <a href="index.html" class="brand" style="color:#fff; margin-bottom:48px;">
+            <span class="brand-mark">C</span> CivicChain
+        </a>
+        <h2 style="color:#fff; font-size:var(--fs-3xl); max-width:420px;">Welcome back to a more transparent ballot box.</h2>
+        <p style="color:rgba(255,255,255,0.75); max-width:380px;">Log in to cast your vote, track your voting history, or manage elections as an administrator.</p>
+        <div style="margin-top:48px; display:flex; gap:14px; align-items:center;">
+            <div class="badge" style="background:rgba(255,255,255,0.12); color:#fff;">
+                <span class="badge-dot" style="background:#5eead4;"></span> Blockchain secured
+            </div>
+        </div>
+    </div>
+
+    <!-- Form side -->
+    <div class="auth-form-side">
+        <div class="auth-card animate-fade-up">
+            <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode" style="margin-bottom:24px;"></button>
+            <span class="eyebrow">Sign in</span>
+            <h2 style="margin-bottom:8px;">Log in to your account</h2>
+            <p class="text-soft" style="margin-bottom:32px;">New here? <a href="register.html">Create an account</a></p>
+
+            <form id="loginForm" novalidate>
+                <div class="form-group">
+                    <label class="form-label" for="email">Email address</label>
+                    <input type="email" id="email" class="form-control" placeholder="you@example.com" required>
+                    <div class="form-error">Please enter a valid email address.</div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="password">Password</label>
+                    <div class="input-group">
+                        <input type="password" id="password" class="form-control" placeholder="Enter your password" required>
+                        <button type="button" class="input-group-icon" id="togglePassword" aria-label="Show password">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                        </button>
+                    </div>
+                    <div class="form-error">Password is required.</div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block" id="loginBtn">Log In</button>
+            </form>
+
+            <p class="text-muted" style="text-align:center; margin-top:24px; font-size:var(--fs-xs);">
+                Demo admin account: <span class="mono">admin@evoting.local</span> / <span class="mono">Admin@123</span>
+            </p>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>

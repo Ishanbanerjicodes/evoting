@@ -1,0 +1,125 @@
+/* ============================================================================
+   base.css
+   Reset, base element styles, and typography scale.
+   ============================================================================ */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: var(--fs-base);
+    color: var(--color-ink);
+    background: var(--color-bg);
+    -webkit-font-smoothing: antialiased;
+    transition: background var(--transition-base), color var(--transition-base);
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.15;
+    margin: 0 0 0.5em;
+    letter-spacing: -0.01em;
+}
+
+h1 { font-size: var(--fs-4xl); }
+h2 { font-size: var(--fs-3xl); }
+h3 { font-size: var(--fs-2xl); }
+h4 { font-size: var(--fs-xl); }
+
+p {
+    margin: 0 0 1em;
+    color: var(--color-ink-soft);
+    line-height: 1.65;
+}
+
+a {
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+a:hover {
+    color: var(--color-accent-strong);
+}
+
+code, .mono, .font-mono {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+}
+
+.eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--fs-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--color-accent);
+    font-weight: 600;
+}
+
+.text-muted { color: var(--color-ink-faint); }
+.text-soft { color: var(--color-ink-soft); }
+
+::selection {
+    background: var(--color-accent);
+    color: #fff;
+}
+
+/* Visible keyboard focus everywhere — accessibility floor */
+:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Scrollbar theming (progressive enhancement, WebKit + Firefox) */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-ink-faint) transparent;
+}
+*::-webkit-scrollbar { width: 8px; height: 8px; }
+*::-webkit-scrollbar-thumb {
+    background: var(--color-ink-faint);
+    border-radius: var(--radius-pill);
+}
+*::-webkit-scrollbar-track { background: transparent; }
+
+.container-app {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.skip-link {
+    position: absolute;
+    left: -999px;
+    top: 0;
+    background: var(--color-accent);
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: var(--radius-sm);
+    z-index: 999;
+}
+.skip-link:focus {
+    left: 16px;
+    top: 16px;
+}

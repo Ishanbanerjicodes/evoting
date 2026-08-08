@@ -1,0 +1,26 @@
+{
+  "server": {
+    "host": "0.0.0.0",
+    "port": 8080
+  },
+  "database": {
+    "host": "127.0.0.1",
+    "port": 3306,
+    "user": "root",
+    "password": "MySQL@123",
+    "name": "evoting_db"
+  },
+  "cors": {
+    "allow_origin": "*"
+  },
+  "smtp": {
+    "host": "smtp.gmail.com",
+    "port": 465,
+    "from_name": "CivicChain E-Voting",
+    "notes": "Only non-secret connection settings live here. SMTP_HOST, SMTP_USERNAME, and SMTP_PASSWORD environment variables are required for OTP emails to actually send — see docs/INSTALL.md. This 'host'/'port' are just fallback defaults if the SMTP_HOST/SMTP_PORT env vars aren't set."
+  },
+  "otp": {
+    "expiry_minutes": 10
+  },
+  "notes": "Edit 'database.password' to match your local MySQL root password before running the server. See docs/INSTALL.md."
+}
