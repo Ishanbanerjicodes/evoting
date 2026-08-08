@@ -33,7 +33,7 @@ does neither:
 
 | Layer | Technology |
 |---|---|
-| Backend | C++17, custom lightweight Winsock HTTP router, MySQL 8.0 (Connector/C), OpenSSL (SHA-256), CMake, MinGW |
+|Backend | C++17, custom lightweight Winsock HTTP router, MySQL 8.0 (Connector/C), OpenSSL (SHA-256), CMake,    MinGW-w64 (C++17)
 | Blockchain | Solidity 0.8.20, Hardhat, Ethers.js v6, MetaMask |
 | Frontend | HTML5, CSS3 (custom design system), Vanilla JavaScript, Bootstrap 5 |
 | Database | MySQL 8.0 |
@@ -54,7 +54,7 @@ does neither:
 
 ```
 evoting/
-├── backend/         C++17 REST API server (CMake + MinGW)
+├── backend/         C++17 REST API server (CMake + MinGW-w64)
 │   ├── src/         Controllers, services, main.cpp
 │   ├── include/     Headers
 │   ├── lib/         Vendored-free simple_http.hpp / simple_json.hpp
@@ -75,9 +75,15 @@ evoting/
 
 ## Quick start (Windows 10/11)
 
-**Prerequisites** (install these first — see `docs/INSTALL.md` for detailed
-steps): Node.js LTS, MySQL 8.0, OpenSSL Win64, MinGW (via MSYS2 or similar),
-CMake, VS Code.
+**Prerequisites** (install these first — see `docs/INSTALL.md` for detailed steps):
+
+- Node.js LTS
+- MySQL 8.0
+- OpenSSL Win64
+- MinGW-w64 with C++17 support *(older MinGW GCC 6.x is not supported because the backend uses C++17 features such as `std::optional`)*
+- CMake
+- Visual Studio Code (recommended)
+
 
 ### 1. Database
 
